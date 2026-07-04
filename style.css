@@ -14,6 +14,7 @@ hr {
       border: none;
       border-top: 3px solid var(--titles);
       margin: 10px 0;
+      padding: 0;
       width: 100%;
       opacity: 0.5;
 }
@@ -31,8 +32,8 @@ body {
 
 nav {
       color: var(--text);
-      margin-top: 10px ;
-      padding: 10px;
+      margin-bottom: 10px;
+      padding: 20px;
       padding-bottom: 15px;
       gap: 70%;
       position: fixed;
@@ -53,17 +54,16 @@ nav {
       margin: 10px;
       color: #9b9999;
       text-decoration: none;
-      transition: all 0.3 ease;
+      transition: all 0.3;
 
 }
 
 
-
+.nav-div a.active,
 .nav-div a:hover {
-      color: var(--titles);
-      transform: scale(1.1);
-      border-bottom: 0.5px solid var(--border);
-      font-size: 1.05em;
+      color: #00567A;
+      transform: scale(1.2);
+      font-weight: bolder;
 }
 
 .name {
@@ -71,6 +71,7 @@ nav {
 }
 
 /* ----------- About me section ---------------- */
+
 
 .about-me {
       color: var(--text);
@@ -129,3 +130,110 @@ nav {
       margin-left: -15px;
 }
 
+/* My skills section */
+
+.skills-section {
+      margin: 25px;
+}
+
+details summary {
+      font-size: larger;
+      padding: 15px;
+      color: var(--border);
+      transition: all 0.5s;
+}
+
+details summary:hover {
+      color: var(--titles);
+      letter-spacing: 1.2px;
+}
+
+.container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 15px;
+      padding-left: 30px;
+      margin: 15px;
+      gap: 30px;
+}
+
+.skill-card {
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      min-width: 110px;
+      max-width: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--card-bg);
+      box-shadow: 2px 8px 24px rgba(0, 180, 216, 0.3);
+      transition: all 0.4s;
+}
+
+.skill-card .skill-name {
+      font-size: large;
+      color: cadetblue;
+}
+
+.skill-card:hover {
+      background-color: #00222b;
+      transform: scale(1.1)
+}
+
+.skill-card {
+      position: relative;
+      background-color: var(--card-bg);
+      overflow: hidden;
+}
+
+.skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right,
+                  rgba(255, 255, 255, 0) 0%,
+                  rgba(255, 255, 255, 0.13) 50%,
+                  rgba(255, 255, 255, 0) 100%);
+      transform: skewX(-25deg);
+      animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+      0% {
+            left: -150%;
+      }
+
+      30% {
+            left: 150%;
+      }
+
+      100% {
+            left: 150%;
+      }
+
+}
+
+details .container {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.6s ease-in-out, opacity 0.5s ease-in-out, display 0.6s ease-in-out allow-discrete;
+}
+
+details[open] .container {
+      max-height: 1000px;
+      opacity: 1;
+}
+
+@starting-style {
+      details[open] .container {
+            max-height: 0;
+            opacity: 0;
+      }
+}

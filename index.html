@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="data:,">
+    <link rel="icon" href="data:," />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <title>My portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./style.css?v=2" />
@@ -14,13 +18,14 @@
         <h3 class="name">Zyad Ahmed</h3>
         <div class="nav-div">
           <a href="#about-me">About Me</a>
-          <a href="#">My skills</a>
+          <a href="#skills-section">My skills</a>
           <a href="#">My Projects</a>
           <a href="#">Contact Me</a>
           <!-- TODO ADD THE LINKS TO THE NAV BAR & STYLE IT -->
         </div>
       </nav>
     </header>
+    <!-- about me section -->
     <section class="about-me" id="about-me">
       <h2 class="title">About Me</h2>
       <div class="flex">
@@ -39,7 +44,7 @@
             <li><strong>specification: </strong>Front-End Development.</li>
           </ul>
         </div>
-              <div class="right-side">
+        <div class="right-side">
           <img src="images/image(2).jpg" alt="My Photo" />
           <div><span>Junior Front-end Developer</span></div>
         </div>
@@ -161,5 +166,118 @@
       </ul>
     </section>
     <hr />
+    <!-- Skills Section  -->
+    <section class="skills-section" id="skills-section">
+      <h2 class="title">My Skills</h2>
+      <details open>
+        <summary>Web Skills</summary>
+        <div class="container">
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+              class="skill-image"
+            />
+            <span class="skill-name">HTML 5</span>
+          </div>
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+              class="skill-image"
+            />
+            <span class="skill-name">CSS 3</span>
+          </div>
+        </div>
+      </details>
+      <details>
+        <summary>Programming Skills</summary>
+        <div class="container">
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+              class="skill-img"
+            />
+            <span class="skill-name">C++</span>
+          </div>
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+              class="skill-image"
+            />
+            <span class="skill-name">Python</span>
+          </div>
+        </div>
+      </details>
+      <details>
+        <summary>Tools&Software</summary>
+        <div class="container">
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+              class="skill-image"
+            />
+            <span class="skill-name">Figma</span>
+          </div>
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg"
+              class="skill-image"
+            />
+            <span class="skill-name">Jira</span>
+          </div>
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+              class="skill-image"
+            />
+            <span class="skill-name">Git</span>
+          </div>
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+              class="skill-image"
+            />
+            <span class="skill-name">Github</span>
+          </div>
+          <div class="skill-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+              class="skill-image"
+            />
+            <span class="skill-name">VS Code</span>
+          </div>
+        </div>
+      </details>
+    </section>
+    <hr />
   </body>
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    const options = {
+      root: null,
+      threshold: 0.6,
+      rootMargin: "0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const activeId = entry.target.getAttribute("id");
+
+          navLinks.forEach((link) => {
+            if (link.getAttribute("href") === `#${activeId}`) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+        }
+      });
+    }, options);
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+  </script>
 </html>
