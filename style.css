@@ -247,11 +247,6 @@ details[open] .container {
             padding: 10px 0;
       }
 
-      .about-me {
-            margin: 30px;
-            flex-direction: column;
-      }
-
       .nav-div a {
             font-size: 0.95em;
       }
@@ -260,20 +255,35 @@ details[open] .container {
             width: 60%;
       }
 
+      .flex {
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 30px;
+      }
+
+      .about-me {
+            margin: 20px;
+      }
 
       .right-side {
-            order: 1;
             width: 100%;
-            height: auto;
-            display: flex;
             gap: 10px;
-            align-items: center;
+            height: auto;
+      }
+
+      .about-me img {
+            width: 250px;
+            max-width: 100%;
+            height: auto;
       }
 
       .left-side {
-            order: 2;
-            margin: 0;
             width: 100%;
+            margin: 0;
+      }
+
+      .lang {
+            margin-left: 0;
       }
 
       .nav-div a.active,
