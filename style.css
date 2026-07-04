@@ -1,0 +1,125 @@
+:root {
+      --main-bg: #001116;
+      --card-bg: #00161d;
+      --titles: #007EA7;
+      --border: #003459;
+      --text: #FFFFFF;
+}
+
+hr {
+      border: none;
+      border-top: 3px solid var(--titles);
+      margin: 10px 0;
+      width: 100%;
+      opacity: 0.5;
+}
+
+body {
+      background-color: var(--main-bg);
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      padding-top: 50px;
+}
+
+
+/* ----------- Nav bar ---------------- */
+
+nav {
+      color: var(--text);
+      margin-top: 10px ;
+      padding: 10px;
+      padding-bottom: 15px;
+      gap: 70%;
+      position: fixed;
+      background-color: var(--main-bg);
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      height: fit-content;
+      border-bottom: 3px solid var(--border);
+}
+
+.nav-div {
+      display: inline;
+}
+
+.nav-div a {
+      margin: 10px;
+      color: #9b9999;
+      text-decoration: none;
+      transition: all 0.3 ease;
+
+}
+
+
+
+.nav-div a:hover {
+      color: var(--titles);
+      transform: scale(1.1);
+      border-bottom: 0.5px solid var(--border);
+      font-size: 1.05em;
+}
+
+.name {
+      display: inline;
+}
+
+/* ----------- About me section ---------------- */
+
+.about-me {
+      color: var(--text);
+      margin: 25px;
+}
+
+.right-side {
+      width: 350px;
+      height: 200px;
+      overflow: hidden;
+}
+
+.about-me img {
+      width: 70%;
+      height: 100%;
+      border-radius: 10px;
+}
+
+
+
+.title,
+.name {
+      color: var(--titles);
+}
+
+.about-me ul {
+      list-style: none;
+      line-height: 1.5;
+}
+
+.about-me ul li {
+      letter-spacing: 1.5;
+}
+
+.lang li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+}
+
+.lang li svg {
+      width: 24px;
+      height: 24px;
+}
+
+.flex {
+      display: flex;
+      gap: 10%;
+}
+
+.left-side {
+      margin: -15px;
+}
+
+.lang {
+      margin-left: -15px;
+}
+
