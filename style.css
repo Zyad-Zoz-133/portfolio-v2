@@ -6,6 +6,12 @@
       --text: #FFFFFF;
 }
 
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
 hr {
       border: none;
       border-top: 3px solid var(--titles);
