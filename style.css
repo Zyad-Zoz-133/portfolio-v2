@@ -81,6 +81,9 @@ nav {
 .right-side {
       width: 350px;
       height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       overflow: hidden;
 }
 
@@ -235,5 +238,47 @@ details[open] .container {
       details[open] .container {
             max-height: 0;
             opacity: 0;
+      }
+}
+
+@media (max-width: 768px) {
+      .nav-div {
+            gap: 10px;
+            padding: 10px 0;
+      }
+
+      .about-me {
+            margin: 30px;
+            flex-direction: column;
+      }
+
+      .nav-div a {
+            font-size: 0.95em;
+      }
+
+      img {
+            width: 60%;
+      }
+
+
+      .right-side {
+            order: 1;
+            width: 100%;
+            height: auto;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+      }
+
+      .left-side {
+            order: 2;
+            margin: 0;
+            width: 100%;
+      }
+
+      .nav-div a.active,
+      .nav-div a:hover {
+            transform: scale(1.05);
+            font-size: 1em;
       }
 }
