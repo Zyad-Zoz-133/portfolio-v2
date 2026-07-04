@@ -247,6 +247,11 @@ details[open] .container {
             padding: 10px 0;
       }
 
+      nav{
+            display: flex;
+            align-items: center;
+      }
+
       .nav-div a {
             font-size: 0.95em;
       }
@@ -262,7 +267,7 @@ details[open] .container {
       }
 
       .about-me {
-            margin: 20px;
+            margin: 25px;
       }
 
       .right-side {
@@ -290,5 +295,9 @@ details[open] .container {
       .nav-div a:hover {
             transform: scale(1.05);
             font-size: 1em;
+      }
+
+       .skill-card{
+            max-width: fit-content;
       }
 }
