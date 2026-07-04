@@ -56,7 +56,7 @@ portfolio-v2/
 
 ## **📝 Credits & License**
 
-* Developed by **[Your Name]**
+* Developed by **[Zyad Ahmed]**
 * Open-source and available under the [MIT License](LICENSE)
 * Feel free to use the code for learning and personal development
 
