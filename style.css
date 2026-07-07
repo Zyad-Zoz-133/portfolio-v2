@@ -368,7 +368,7 @@ details[open] .container {
 
       .right-side {
             width: 100%;
-            gap: 10px;
+            gap: 20px;
             align-self: center;
             order: 1;
       }
