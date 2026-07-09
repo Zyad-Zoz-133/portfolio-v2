@@ -16,6 +16,8 @@ hr {
       margin: 10px 0;
       width: 100%;
       opacity: 0.5;
+      width: calc(100% + 50px);
+      margin-left: -25px;
 }
 
 body {
@@ -72,28 +74,40 @@ nav {
 /* ----------- About me section ---------------- */
 
 
-.about-me {
+.about-me,
+.contact-me {
       color: var(--text);
       margin: 25px;
 }
 
+h2 {
+      text-transform: capitalize;
+}
+
 .right-side {
       width: 350px;
-      height: 200px;
+      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 10px;
 }
 
-.right-side .special {
-      margin: -90px;
-}
 
 .about-me img {
-      width: 100%;
-      height: 70%;
+      width: 280px;
+      height: 220px;
+      object-fit: cover;
       border-radius: 10px;
+}
+
+
+.special {
+      width: 100%;
+      text-align: center;
+      color: var(--text);
+      font-size: 1.2rem;
+      font-weight: bold;
 }
 
 .title,
@@ -104,6 +118,7 @@ nav {
 .about-me ul {
       list-style: none;
       line-height: 1.5;
+      padding-left: 15px;
 }
 
 .about-me ul li {
@@ -303,7 +318,118 @@ details[open] .container {
       color: var(--text);
 }
 
+/* Contact me */
 
+.contact-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+}
+
+.social {
+      display: flex;
+      flex-direction: row;
+      margin: 30px;
+      gap: 30px;
+}
+
+.contact-me p {
+      line-height: 1.3;
+}
+
+.contact-card {
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      color: cadetblue;
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      text-decoration: none;
+      box-shadow: 2px 1px 24px rgba(0, 180, 216, 0.3);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease-out;
+}
+
+.contact-card:hover {
+      scale: 1.1;
+      background-color: var(--card-bg);
+      letter-spacing: 1.1;
+}
+
+.contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right,
+                  rgba(255, 255, 255, 0) 0%,
+                  rgba(255, 255, 255, 0.13) 50%,
+                  rgba(255, 255, 255, 0) 100%);
+      transform: skewX(-25deg);
+      animation: shine 3s infinite linear;
+}
+
+.contact-card svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--titles);
+}
+
+.cv-btn {
+      display: flex;
+      text-decoration: none;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      height: fit-content;
+      background-color: var(--border);
+      padding: 8px;
+      border-radius: 10px;
+      gap: 5px;
+      transition: all 0.3s ease-in-out;
+      color: black;
+}
+
+.cv-btn span {
+      text-decoration: none;
+      justify-self: center;
+}
+
+.cv-btn svg {
+      width: 18px;
+      height: 18px;
+}
+
+.cv-btn:hover {
+      scale: 1.05;
+      background-color: var(--titles);
+      color: var(--text);
+}
+
+
+
+.cv-btn:hover svg {
+      scale: 1.05;
+}
+
+footer p {
+      line-height: 1.5;
+      color: var(--titles);
+      margin: 25px;
+      font-size: 14px;
+}
+
+
+/* responsive */
 @keyframes shine {
       0% {
             left: -150%;
@@ -324,6 +450,8 @@ details[open] .container {
       .nav-div {
             gap: 10px;
             padding: 10px 0;
+            margin: -5px;
+            margin-top: -15px;
       }
 
       .name {
@@ -334,10 +462,14 @@ details[open] .container {
             margin-top: -15px;
             padding: 5px;
             display: flex;
-            gap: -5px;
+            column-gap: 0;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+      }
+
+      nav h3 {
+            margin-top: 30px;
       }
 
       .proj-container {
@@ -357,8 +489,9 @@ details[open] .container {
       }
 
       .flex {
+            display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 80px;
             flex-wrap: nowrap;
       }
 
