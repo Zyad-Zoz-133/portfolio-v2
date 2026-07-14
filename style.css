@@ -449,6 +449,10 @@ footer p {
 
 
 @media (max-width: 768px) {
+      body {
+            margin-top: 90px;
+      }
+
       .nav-div {
             gap: 10px;
             padding: 10px 0;
@@ -534,4 +538,18 @@ footer p {
       .skill-card {
             max-width: fit-content;
       }
+
+      .container {
+            flex-direction: column;
+      }
+
+      .skill-card {
+            width: 300px;
+            height: fit-content;
+      }
+
+      .contact-list {
+            flex-wrap: wrap;
+      }
+
 }
