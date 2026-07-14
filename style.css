@@ -339,6 +339,7 @@ details[open] .container {
 }
 
 .contact-card {
+      flex: 1;
       border: 2px solid var(--border);
       border-radius: 10px;
       color: cadetblue;
