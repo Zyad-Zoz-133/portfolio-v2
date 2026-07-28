@@ -169,18 +169,22 @@ details summary:hover {
 
 .container {
       display: flex;
+      flex-direction: row;
       padding: 15px;
       padding-left: 30px;
       margin: 15px;
-      gap: 30px;
+      gap: 20px;
 }
 
 .skill-card {
       border: 2px solid var(--border);
       border-radius: 10px;
       padding: 20px;
+      flex: 1 1 110px;
+      width: 110px;
       min-width: 110px;
       max-width: 110px;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -190,7 +194,6 @@ details summary:hover {
       box-shadow: 4px 4px 14px rgba(0, 180, 216, 0.3);
       transition: all 0.4s;
       position: relative;
-      background-color: var(--card-bg);
       overflow: hidden;
 }
 
@@ -219,8 +222,6 @@ details summary:hover {
       animation: shine 3s infinite linear;
 }
 
-
-
 details .container {
       overflow: hidden;
       max-height: 0;
@@ -248,18 +249,22 @@ details[open] .container {
 
 .proj-container {
       display: flex;
+      flex-wrap: wrap;
       gap: 20px;
 }
 
 .one-proj {
       display: flex;
       flex-direction: column;
+      flex: 1 1 calc((100% - 40px) / 3);
+      width: calc((100% - 40px) / 3);
+      max-width: calc((100% - 40px) / 3);
+      min-width: 0;
       flex-wrap: nowrap;
       background-color: var(--main-bg);
-      width: 30%;
       height: fit-content;
       padding: 10px;
-      margin: 10px;
+      margin: 0;
       border: 2px solid var(--border);
       border-radius: 10px;
       box-shadow: 2px 8px 24px rgba(0, 180, 216, 0.3);
@@ -444,73 +449,73 @@ footer p {
       100% {
             left: 150%;
       }
-
 }
-
 
 @media (max-width: 768px) {
       body {
-            margin-top: 90px;
+            margin-top: 105px;
             width: 100%;
+            overflow-x: hidden;
       }
 
-      .nav-div {
-            gap: 10px;
-            padding: 10px 0;
-            margin: -5px;
-            margin-top: -15px;
-      }
-
-      .name {
-            break-after: always;
-      }
-
+      /* Mobile navbar */
       nav {
-            margin-top: -15px;
-            padding: 5px;
+            padding: 10px 12px;
             display: flex;
-            column-gap: 0;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: 8px;
+            margin: 0;
       }
 
       nav h3 {
-            margin-top: 30px;
+            margin: 4px 0 8px;
       }
 
-      .proj-container {
+      .name {
+            display: block;
+      }
+
+      .nav-div {
+            display: flex;
             flex-wrap: wrap;
-      }
-
-      .one-proj {
-            width: fit-content;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            padding: 0;
+            margin: 0;
       }
 
       .nav-div a {
-            font-size: 0.95em;
+            margin: 4px 6px;
+            font-size: 0.95rem;
       }
 
-      img {
-            width: 60%;
-      }
-
+      /* Hero section: everything underneath each other */
       .flex {
             display: flex;
             flex-direction: column;
-            gap: 80px;
-            flex-wrap: nowrap;
+            align-items: center;
+            gap: 35px;
+      }
+
+      .right-side,
+      .left-side {
+            width: 100%;
+            margin: 0;
+      }
+
+      .right-side {
+            order: 1;
+      }
+
+      .left-side {
+            order: 2;
       }
 
       .about-me {
             margin: 25px;
-      }
-
-      .right-side {
-            width: 100%;
-            gap: 20px;
-            align-self: center;
-            order: 1;
       }
 
       .about-me img {
@@ -519,38 +524,54 @@ footer p {
             height: auto;
       }
 
-      .left-side {
-            width: 100%;
-            margin: 0;
-            align-self: start;
-            order: 2;
-      }
-
       .lang {
             margin-left: 0;
       }
 
-      .nav-div a.active,
-      .nav-div a:hover {
-            transform: scale(1.05);
-            font-size: 1em;
+      /* Skills: 2 columns, equal card sizes */
+      .skills-section .container {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+            padding: 15px;
+            margin: 15px 0;
       }
 
-      .skill-card {
-            max-width: fit-content;
+      .skills-section .skill-card {
+            width: 110px;
+            min-width: 110px;
+            max-width: 110px;
+            height: 150px;
       }
 
-      .container {
+      /* Projects: one card per row */
+      .proj-container {
+            display: flex;
             flex-direction: column;
+            gap: 20px;
       }
 
-      .skill-card {
-            width: 300px;
-            height: fit-content;
+      .one-proj {
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: none;
+            min-width: 0;
+            margin: 0;
       }
 
+      /* Contact */
       .contact-list {
             flex-wrap: wrap;
       }
 
+      .social {
+            flex-wrap: wrap;
+            justify-content: center;
+      }
+
+      /* Keep horizontal rules inside the viewport */
+      hr {
+            width: 100%;
+            margin-left: 0;
+      }
 }
