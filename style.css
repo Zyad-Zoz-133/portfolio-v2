@@ -45,6 +45,7 @@ nav {
       z-index: 1000;
       height: fit-content;
       border-bottom: 2px solid var(--border);
+      
 }
 
 .nav-div {
@@ -143,6 +144,7 @@ h2 {
 
 .left-side {
       margin: -15px;
+      margin-bottom: -10px;
 }
 
 .lang {
