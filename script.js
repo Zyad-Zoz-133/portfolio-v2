@@ -1,3 +1,9 @@
+if (window.innerWidth >= 768) {
+  document.body.style.zoom = "130%";
+} else {
+  document.body.style.zoom = "100%";
+}
+
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
@@ -40,7 +46,7 @@ window.addEventListener("scroll", () => {
   progressBar.style.height = `${scrollPercentage}%`;
   indicator.textContent = `${Number(scrollPercentage)}%`;
 
-  if(scrollPercentage>=100){
-      indicator.textContent="completed!"
+  if (scrollPercentage >= 100) {
+    indicator.textContent = "completed!";
   }
 });
