@@ -103,6 +103,8 @@
         </div>
       </nav>
     </header>
+    <div class="prog"></div>
+    <div class="indicator"><span>0%</span></div>
     <!-- about me section -->
     <section class="about-me" id="about-me">
       <h2 class="title">About Me</h2>
@@ -626,35 +628,7 @@
         © 2026 Zyad Ahmed • Built with HTML & CSS
       </p>
     </footer>
+    <script src="script.js"></script>
   </body>
-  <script>
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav a");
-
-    const options = {
-      root: null,
-      threshold: 0.6,
-      rootMargin: "0px",
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const activeId = entry.target.getAttribute("id");
-
-          navLinks.forEach((link) => {
-            if (link.getAttribute("href") === `#${activeId}`) {
-              link.classList.add("active");
-            } else {
-              link.classList.remove("active");
-            }
-          });
-        }
-      });
-    }, options);
-
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-  </script>
+  
 </html>
