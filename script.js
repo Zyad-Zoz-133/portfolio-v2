@@ -50,3 +50,51 @@ window.addEventListener("scroll", () => {
     indicator.textContent = "completed!";
   }
 });
+
+// ========== typing animaition ============= //
+
+let title = document.querySelector(".animaition-typing");
+
+const texts = [
+  "Front-End Developer",
+  "Web Developer",
+  "Responsive Web Designer",
+];
+
+type (texts[0],0);
+
+
+
+function type(text, i) {
+  if (i > text.length) {
+    setTimeout(() => {
+      return erase(text, i);
+    }, 1000);
+    return;
+  }
+  setTimeout(() => {
+    let sliced = text.slice(0, i);
+    title.textContent = sliced;
+    type(text, ++i);
+  }, 200);
+}
+
+function erase(text, i) {
+  setTimeout(() => {
+    i--;
+
+    let sliced = text.slice(0, i);
+    title.textContent = sliced;
+
+    if (i === 0) {
+      setTimeout(() => {
+         let randomIndex = Math.floor(Math.random() * texts.length);
+         type(texts[randomIndex], 0);
+      }, 1000);
+
+      return;
+    }
+
+    erase(text, i);
+  }, 200);
+}

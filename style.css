@@ -493,6 +493,22 @@ footer p {
       color: var(--text);
 }
 
+.animaition-typing{
+      color: var(--titles);
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid var(--titles);
+      width: fit-content;
+      padding-right: 1px;
+      animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+      50% {
+            border-color: transparent;
+      }
+}
+
 @media (max-width: 768px) {
       body {
             margin-top: 105px;
