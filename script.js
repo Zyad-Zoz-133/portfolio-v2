@@ -1,5 +1,5 @@
 if (window.innerWidth >= 768) {
-  document.body.style.zoom = "110%";
+  document.body.style.zoom = "125%";
 } else {
   document.body.style.zoom = "100%";
 }
