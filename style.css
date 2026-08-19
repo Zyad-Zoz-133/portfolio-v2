@@ -195,7 +195,7 @@ h2 {
 details summary {
       font-size: larger;
       padding: 15px;
-      color: var(--border);
+      color: var(--titles);
       transition: all 0.5s;
 }
 
