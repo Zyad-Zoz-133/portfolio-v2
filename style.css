@@ -1,7 +1,7 @@
 :root {
       --main-bg: #001116;
       --card-bg: #00161d;
-      --titles: #007EA7;
+      --titles: #019ed2;
       --border: #003459;
       --text: #FFFFFF;
 }
@@ -45,7 +45,7 @@ nav {
       z-index: 10001;
       height: fit-content;
       border-bottom: 2px solid var(--border);
-      
+
 }
 
 .nav-div {
@@ -57,7 +57,7 @@ nav {
       color: #9b9999;
       text-decoration: none;
       transition: all 0.3;
-
+      position: relative;
 }
 
 
@@ -66,6 +66,37 @@ nav {
       color: #00567A;
       transform: scale(1.2);
       font-weight: bolder;
+      padding-bottom: 3px;
+      position: relative;
+}
+.nav-div a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background: var(--border);
+
+      transform: scaleX(0);
+      transform-origin: right;
+}
+
+.nav-div a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+}
+
+.nav-div a:not(:hover)::after {
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s ease;
+}
+
+.nav-div a.active::after {
+      transform: scaleX(1);
+      transform-origin: left;
 }
 
 .name {
@@ -306,7 +337,7 @@ details[open] .container {
       text-transform: capitalize;
 }
 
-.lang-used-container{
+.lang-used-container {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -314,7 +345,7 @@ details[open] .container {
       margin-top: 5px;
 }
 
-.lang-used{
+.lang-used {
       background-color: rgba(0, 126, 167, 0.08);
       border-radius: 8px;
       padding: 5px;
@@ -330,16 +361,13 @@ details[open] .container {
       text-transform: capitalize;
       text-decoration: none;
       color: black;
-      background-color: var(--border);
+      background-color: var(--titles);
       border-radius: 10px;
-      box-shadow: 2px 1px 24px rgba(0, 180, 216, 0.3);
       transition: all 0.3s ease-out;
 }
 
 .view-demo:hover {
       scale: 1.1;
-      background-color: var(--titles);
-      color: var(--text);
 }
 
 /* Contact me */
@@ -417,7 +445,7 @@ details[open] .container {
       align-items: center;
       width: fit-content;
       height: fit-content;
-      background-color: var(--border);
+      background-color: var(--titles);
       padding: 8px;
       border-radius: 10px;
       gap: 5px;
@@ -437,8 +465,6 @@ details[open] .container {
 
 .cv-btn:hover {
       scale: 1.05;
-      background-color: var(--titles);
-      color: var(--text);
 }
 
 
@@ -470,18 +496,18 @@ footer p {
       }
 }
 
-.prog{
+.prog {
       position: fixed;
       left: 0px;
       background: linear-gradient(to top,
-                        #007EA7,
-                        #00B4D8);
+                  #007EA7,
+                  #00B4D8);
       width: 1px;
       height: 0px;
       z-index: 1000;
 }
 
-.indicator{
+.indicator {
       position: fixed;
       right: 30px;
       bottom: 30px;
@@ -489,11 +515,11 @@ footer p {
       background-color: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding:10px ;
+      padding: 10px;
       color: var(--text);
 }
 
-.animaition-typing{
+.animaition-typing {
       color: var(--titles);
       overflow: hidden;
       white-space: nowrap;
@@ -618,20 +644,20 @@ footer p {
       }
 
       /* Contact */
-     .social {
-           display: grid;
-           grid-template-columns: repeat(3, 1fr);
-           gap: 10px;
-           width: 100%;
-           margin: 30px 0;
-     }
+      .social {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 100%;
+            margin: 30px 0;
+      }
 
-     .contact-card {
-           width: 100%;
-           height: 100px;
-           padding: 10px;
-           box-sizing: border-box;
-     }
+      .contact-card {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            box-sizing: border-box;
+      }
 
       /* Keep horizontal rules inside the viewport */
       hr {
@@ -639,7 +665,7 @@ footer p {
             margin-left: 0;
       }
 
-            .prog{
-                  margin-top: -65px;
-            }
+      .prog {
+            margin-top: -65px;
+      }
 }

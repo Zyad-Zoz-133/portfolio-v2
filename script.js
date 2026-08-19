@@ -9,7 +9,7 @@ const navLinks = document.querySelectorAll("nav a");
 
 const options = {
   root: null,
-  threshold: 0.6,
+  threshold: 0.2,
   rootMargin: "0px",
 };
 
