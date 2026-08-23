@@ -47,9 +47,8 @@ portfolio-v2/
 
 ## **🚀 Future Enhancements**
 
-- [ ] Add interactive projects page
-- [ ] Integrate JavaScript for advanced interactions
-- [ ] Add blog section
+- [x] Add interactive projects page
+- [x] Integrate JavaScript for advanced interactions
 - [ ] Implement contact form
 
 ---
