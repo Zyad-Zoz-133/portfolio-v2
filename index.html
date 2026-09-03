@@ -343,8 +343,13 @@
     <hr />
     <section class="my-projects" id="my-projects">
       <h2 class="title">Featured Projects</h2>
+      <div class="filter-btn">
+        <button class="active" id ="all">all</button>
+        <button  id="front">Front-End</button>
+        <button id="cpp">C++</button>
+      </div>
       <div class="proj-container">
-        <div class="one-proj">
+        <div class="one-proj" data-category="cpp">
           <h3 class="title">digital wallet (consol application)</h3>
           <p class="proj-disc">
             Description:This is a C++ console application that manages user bank
@@ -363,8 +368,8 @@
             >view demo</a
           >
         </div>
-        <div class="one-proj">
-          <h3 class="title">modern login&signup page UI</h3>
+        <div class="one-proj" data-category="frontEnd">
+          <h3 class="title" >modern login&signup page UI</h3>
           <p class="proj-disc">
             A simple authentication UI featuring Login and Register pages.
             <br />
@@ -383,8 +388,8 @@
             >view demo</a
           >
         </div>
-        <div class="one-proj">
-          <h3 class="title">Leo's Legacy</h3>
+        <div class="one-proj" data-category="frontEnd">
+          <h3 class="title" >Leo's Legacy</h3>
           <p class="proj-disc">
             A custom tribute website showcasing the legendary football career of
             Lionel Messi. <br />This project built with HTML5&CSS, and it
@@ -405,8 +410,8 @@
             >view demo</a
           >
         </div>
-        <div class="one-proj">
-          <h3 class="title">Seven wonders gallery</h3>
+        <div class="one-proj" data-category="frontEnd">
+          <h3 class="title" >Seven wonders gallery</h3>
           <p class="proj-disc">
             Developed a responsive gallery website featuring the Ancient and New
             Seven Wonders of the World. <br />
@@ -427,7 +432,7 @@
             >view demo</a
           >
         </div>
-         <div class="one-proj">
+         <div class="one-proj" data-category="frontEnd">
           <h3 class="title">Portfolio Website</h3>
           <p class="proj-disc">
            A responsive personal portfolio website built with HTML & CSS to showcase my skills, projects, and development journey.
@@ -445,8 +450,8 @@
             >view demo</a
           >
         </div>
-         <div class="one-proj">
-          <h3 class="title">To-Do List</h3>
+         <div class="one-proj" data-category="frontEnd">
+          <h3 class="title" >To-Do List</h3>
           <p class="proj-disc">
   A responsive task management app built with HTML, CSS, and JavaScript.
   <br>

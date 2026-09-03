@@ -9,7 +9,7 @@ const navLinks = document.querySelectorAll("nav a");
 
 const options = {
   root: null,
-  threshold: 0.2,
+  threshold: 0.4,
   rootMargin: "0px",
 };
 
@@ -123,3 +123,53 @@ overlay.addEventListener("click",()=>{
   NavLinks.classList.remove("show");
   overlay.classList.remove("show");
 })
+
+// ================ project filter ============== //
+
+const allBtn = document.querySelector("#all");
+const frontBtn = document.querySelector("#front");
+const cppBtn = document.querySelector("#cpp");
+
+const projects = document.querySelectorAll(".one-proj");
+
+
+allBtn.addEventListener("click",()=>{
+    projects.forEach( project =>{
+      project.classList.add("show");
+    });
+    allBtn.classList.add("active");
+    frontBtn.classList.remove("active");
+    cppBtn.classList.remove("active");
+});
+
+
+frontBtn.addEventListener("click",()=>{
+    projects.forEach( project =>{
+        if (project.dataset.category === "frontEnd") {
+          project.classList.remove("hide");
+          project.classList.add("show");
+        } else {
+          project.classList.remove("show");
+          project.classList.add("hide");
+        }
+    });
+    frontBtn.classList.add("active");
+    allBtn.classList.remove("active");
+    cppBtn.classList.remove("active");
+});
+
+
+cppBtn.addEventListener("click",()=>{
+    projects.forEach( project =>{
+        if (project.dataset.category === "cpp") {
+          project.classList.remove("hide");
+          project.classList.add("show");
+        } else {
+          project.classList.remove("show");
+          project.classList.add("hide");
+        }
+    });
+    cppBtn.classList.add("active");
+    allBtn.classList.remove("active");
+    frontBtn.classList.remove("active");
+});

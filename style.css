@@ -366,6 +366,14 @@ details[open] .container {
       transition: all 0.3s ease-in-out;
 }
 
+.one-proj.hide{
+      display: none;
+}
+
+.one-proj.show{
+      display: flex;
+}
+
 .one-proj::before {
       content: '';
       position: absolute;
@@ -379,6 +387,7 @@ details[open] .container {
                   rgba(255, 255, 255, 0) 100%);
       transform: skewX(-25deg);
       animation: shine 3s infinite linear;
+
 }
 
 .one-proj:hover {
@@ -589,6 +598,40 @@ footer p {
       padding-right: 1px;
       animation: blink 0.7s infinite;
 }
+
+/* ========= Projects filter ========= */
+
+.filter-btn {
+      display: flex;
+      gap: 20px;
+      margin: 30px;
+      margin-left: 0px;
+
+      button {
+            background-color: var(--main-bg);
+            padding: 10px;
+            text-wrap: nowrap;
+            width: fit-content;
+            color: white;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            transition: all 0.4s ease-in-out;
+      }
+
+      button.active,
+      button:hover {
+            background-color: #00B4D8;
+            color: #001116;
+            border-color: #00B4D8;
+      }
+
+      button:hover {
+            cursor: pointer;
+      }
+}
+
+
+/*  =======================  */
 
 @keyframes blink {
       50% {
