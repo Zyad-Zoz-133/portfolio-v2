@@ -10,17 +10,17 @@
       box-sizing: border-box;
 }
 
-html{
+html {
       scrollbar-width: none;
       scroll-behavior: smooth;
 }
 
-::selection{
+::selection {
       background: #019ed2a2;
-      
+
 }
 
-p{
+p {
       text-wrap: pretty;
 }
 
@@ -76,17 +76,18 @@ nav {
       text-decoration: none;
       transition: all 0.3;
       position: relative;
+      font-size: 20px;
 }
 
 
 .nav-div a.active,
 .nav-div a:hover {
       color: #00567A;
-      transform: scale(1.2);
       font-weight: bolder;
       padding-bottom: 3px;
       position: relative;
 }
+
 .nav-div a::after {
       content: "";
       position: absolute;
@@ -119,6 +120,47 @@ nav {
 
 .name {
       display: inline;
+}
+
+.menu-btn {
+      box-sizing: content-box;
+      background-color: var(--card-bg);
+      width: 30px;
+      height: 30px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 4px;
+
+      span {
+            display: block;
+            width: 80%;
+            height: 1px;
+            background: var(--text);
+      }
+
+      position: absolute;
+      right: 40px;
+      top:15px;
+      display: none;
+}
+
+
+.overlay {
+      position: fixed;
+      inset: 0;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      z-index: 9998;
+      display: none;
+}
+
+.overlay.show {
+      display: block;
 }
 
 /* ----------- About me section ---------------- */
@@ -556,20 +598,49 @@ footer p {
 
 @media (max-width: 768px) {
       body {
-            margin-top: 105px;
+            margin-top: 30px;
             width: 100%;
             overflow-x: hidden;
       }
 
+
+
       /* Mobile navbar */
-      nav {
-            padding: 10px 12px;
+
+      .nav-div {
+            display: none;
+      }
+
+      .nav-div.mobile {
             display: flex;
+            background-color: var(--card-bg);
+            position: fixed;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            margin: 0;
+            gap: 15px;
+            right: 30px;
+            top: 100px;
+            padding: 20px;
+            border: 3px solid var(--border);
+            border-radius: 10px;
+            font-size: 30px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20px);
+
+            transition:
+                  opacity 0.5s ease,
+                  transform 0.5s ease,
+                  visibility 0.5s ease;
+      }
+
+      .nav-div.mobile.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+      }
+
+      .menu-btn {
+            display: flex;
       }
 
       nav h3 {
@@ -580,20 +651,7 @@ footer p {
             display: block;
       }
 
-      .nav-div {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 6px;
-            padding: 0;
-            margin: 0;
-      }
 
-      .nav-div a {
-            margin: 4px 6px;
-            font-size: 0.95rem;
-      }
 
       /* Hero section: everything underneath each other */
       .flex {

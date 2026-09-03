@@ -98,3 +98,28 @@ function erase(text, i) {
     erase(text, i);
   }, 200);
 }
+
+// ============== hamburger menu ============== //
+
+const menuBtn = document.querySelector(".menu-btn");
+const NavLinks = document.querySelector(".nav-div");
+const overlay =document.querySelector(".overlay");
+
+menuBtn.addEventListener("click",()=>{
+  NavLinks.classList.toggle("show");
+  overlay.classList.toggle("show");
+});
+
+const links =document.querySelectorAll (".nav-div a");
+
+links.forEach(link =>{
+     link.addEventListener("click",()=>{
+     NavLinks.classList.remove("show");
+     overlay.classList.remove("show");
+  });
+});
+
+overlay.addEventListener("click",()=>{
+  NavLinks.classList.remove("show");
+  overlay.classList.remove("show");
+})
